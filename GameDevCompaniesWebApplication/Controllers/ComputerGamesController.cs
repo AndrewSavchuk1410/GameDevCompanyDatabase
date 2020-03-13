@@ -42,6 +42,42 @@ namespace GameDevCompaniesWebApplication.Controllers
             return View(computerGames);
         }
 
+        public async Task<IActionResult> Genres(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var computerGames = await _context.ComputerGames
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (computerGames == null)
+            {
+                return NotFound();
+            }
+
+            //return View(computerGames);
+            return RedirectToAction("Index", "GamesGenres", new { id = computerGames.Id, name = computerGames.Name });
+        }
+
+        public async Task<IActionResult> Platforms(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var computerGames = await _context.ComputerGames
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (computerGames == null)
+            {
+                return NotFound();
+            }
+
+            //return View(computerGames);
+            return RedirectToAction("Index", "GamesPlatforms", new { id = computerGames.Id, name = computerGames.Name });
+        }
+
         // GET: ComputerGames/Create
         public IActionResult Create()
         {
@@ -55,7 +91,15 @@ namespace GameDevCompaniesWebApplication.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Budget,Engine")] ComputerGames computerGames)
         {
-            if (ModelState.IsValid)
+            ComputerGames existingGame = await _context.ComputerGames.FirstOrDefaultAsync(
+                g => g.Name == computerGames.Name);
+
+            if (existingGame != null)
+            {
+                ModelState.AddModelError(string.Empty, "This game already exists.");
+            }
+
+            else if (ModelState.IsValid)
             {
                 _context.Add(computerGames);
                 await _context.SaveChangesAsync();
@@ -92,7 +136,15 @@ namespace GameDevCompaniesWebApplication.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            ComputerGames existingGame = await _context.ComputerGames.FirstOrDefaultAsync(
+               g => g.Name == computerGames.Name);
+
+            if (existingGame != null)
+            {
+                ModelState.AddModelError(string.Empty, "This game already exists.");
+            }
+
+            else if (ModelState.IsValid)
             {
                 try
                 {
@@ -138,6 +190,9 @@ namespace GameDevCompaniesWebApplication.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            var genres = _context.GamesGenres.Where(g => g.GameId == id);
+            foreach (var g in genres)
+                _context.GamesGenres.Remove(g);
             var computerGames = await _context.ComputerGames.FindAsync(id);
             _context.ComputerGames.Remove(computerGames);
             await _context.SaveChangesAsync();

@@ -17,7 +17,7 @@ namespace GameDevCompaniesWebApplication
 
         public int Id { get; set; }
         [Required(ErrorMessage = "The field has to be filled")]
-        [Display(Name = "Computer Game")]
+        [Display(Name = "Name")]
         public string Name { get; set; }
         [Required(ErrorMessage = "The field has to be filled")]
         //[Display(Name = "Budget of Computer Game")]

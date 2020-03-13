@@ -89,24 +89,26 @@ namespace GameDevCompaniesWebApplication
             modelBuilder.Entity<GamesDevelopers>(entity =>
             {
                 entity.Property(e => e.Id)
-                    .HasColumnName("ID")
-                    .ValueGeneratedNever();
-
-                entity.Property(e => e.GameId).HasColumnName("GameID");
+                    .HasColumnName("ID");
+                    //.ValueGeneratedNever();
 
                 entity.Property(e => e.SubsidiariesId).HasColumnName("SubsidiariesID");
-
-                entity.HasOne(d => d.Game)
-                    .WithMany(p => p.GamesDevelopers)
-                    .HasForeignKey(d => d.GameId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_GameDeveloper_ComputerGame");
+                
+                entity.Property(e => e.GameId).HasColumnName("GameID");
 
                 entity.HasOne(d => d.Subsidiaries)
                     .WithMany(p => p.GamesDevelopers)
                     .HasForeignKey(d => d.SubsidiariesId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_GameDeveloper_Subsidiaries");
+                
+                entity.HasOne(d => d.Game)
+                    .WithMany(p => p.GamesDevelopers)
+                    .HasForeignKey(d => d.GameId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_GameDeveloper_ComputerGame");
+
+                
             });
 
             modelBuilder.Entity<GamesDistributors>(entity =>
@@ -135,8 +137,8 @@ namespace GameDevCompaniesWebApplication
             modelBuilder.Entity<GamesGenres>(entity =>
             {
                 entity.Property(e => e.Id)
-                    .HasColumnName("ID")
-                    .ValueGeneratedNever();
+                    .HasColumnName("ID");
+                    //.ValueGeneratedNever();
 
                 entity.Property(e => e.GameId).HasColumnName("GameID");
 
@@ -158,8 +160,8 @@ namespace GameDevCompaniesWebApplication
             modelBuilder.Entity<GamesPlatforms>(entity =>
             {
                 entity.Property(e => e.Id)
-                    .HasColumnName("ID")
-                    .ValueGeneratedNever();
+                    .HasColumnName("ID");
+                    //.ValueGeneratedNever();
 
                 entity.Property(e => e.GameId).HasColumnName("GameID");
 

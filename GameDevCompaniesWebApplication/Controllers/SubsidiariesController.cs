@@ -49,6 +49,25 @@ namespace GameDevCompaniesWebApplication.Controllers
             return View(subsidiaries);
         }
 
+        public async Task<IActionResult> Games(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var subsidiaries = await _context.Subsidiaries
+                .Include(s => s.Company)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (subsidiaries == null)
+            {
+                return NotFound();
+            }
+
+            //return View(subsidiaries);
+            return RedirectToAction("Index", "GamesDevelopers", new { id = subsidiaries.Id, name = subsidiaries.Name });
+        }
+
         // GET: Subsidiaries/Create
         public IActionResult Create(int CompanyId)
         {
@@ -92,7 +111,7 @@ namespace GameDevCompaniesWebApplication.Controllers
             {
                 return NotFound();
             }
-            ViewData["CompanyId"] = new SelectList(_context.GameDevCompanies, "Id", "DirectorFullName", subsidiaries.CompanyId);
+            ViewData["CompanyId"] = new SelectList(_context.GameDevCompanies, "Id", "Name", subsidiaries.CompanyId);
             return View(subsidiaries);
         }
 

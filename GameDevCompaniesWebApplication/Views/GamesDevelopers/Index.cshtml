@@ -1,0 +1,42 @@
+﻿@model IEnumerable<GameDevCompaniesWebApplication.GamesDevelopers>
+
+@{
+    ViewData["Title"] = "Index";
+    //Layout = "GameDevCompanies";
+}
+
+<h1>Games developed by @ViewBag.SubsidiariesName</h1>
+
+<p>
+    @Html.ActionLink("Add new game", "Create", new { SubsidiariesId = ViewBag.SubsidiariesId })
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Subsidiaries.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Game.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subsidiaries.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Game.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

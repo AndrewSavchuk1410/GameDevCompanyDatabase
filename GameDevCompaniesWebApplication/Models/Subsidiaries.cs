@@ -17,6 +17,7 @@ namespace GameDevCompaniesWebApplication
         public string Name { get; set; }
         [Required(ErrorMessage = "The field must be filled")]
         public string Location { get; set; }
+        [Display(Name = "Company name")]
         public int CompanyId { get; set; }
         [Required(ErrorMessage = "The field must be filled")]
         [Display(Name = "Studio manager")]

@@ -56,7 +56,15 @@ namespace GameDevCompaniesWebApplication.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Location,DirectorFullName")] GameDevCompanies gameDevCompanies)
         {
-            if (ModelState.IsValid)
+            GameDevCompanies existingCompany = await _context.GameDevCompanies.FirstOrDefaultAsync(
+                c => c.Name == gameDevCompanies.Name && c.Location == gameDevCompanies.Location); 
+
+            if (existingCompany != null)
+            {
+                ModelState.AddModelError(string.Empty, "This company already exists.");
+            }
+
+            else if (ModelState.IsValid)
             {
                 _context.Add(gameDevCompanies);
                 await _context.SaveChangesAsync();
@@ -93,7 +101,15 @@ namespace GameDevCompaniesWebApplication.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            GameDevCompanies existingCompany = await _context.GameDevCompanies.FirstOrDefaultAsync(
+                c => c.Name == gameDevCompanies.Name && c.Location == gameDevCompanies.Location);
+
+            if (existingCompany != null)
+            {
+                ModelState.AddModelError(string.Empty, "This company already exists.");
+            }
+
+            else if (ModelState.IsValid)
             {
                 try
                 {

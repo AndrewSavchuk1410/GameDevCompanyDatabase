@@ -61,6 +61,7 @@ namespace GameDevCompaniesWebApplication.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            //ViewData["GenreId"] = new SelectList(_context.Genres, "Id", "Name", genres.Id);
             return View(genres);
         }
 
