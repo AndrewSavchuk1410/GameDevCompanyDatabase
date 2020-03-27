@@ -10,6 +10,31 @@
 <p>
     <a asp-action="Create">Add new company</a>
 </p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <h3>Import (Excel)</h3>
+                @using (Html.BeginForm("Import", "GameDevCompanies", FormMethod.Post, new { enctype = "multipart/form-data", id = "frm-excel" }))
+                {
+                    <div>
+                        <input type="file" name="fileExcel" value="Вибрати файл" , id="fileExcel" />
+                        <input type="submit" size="10" value="Load" />
+                    </div>
+                }
+            </th>
+
+            <th>
+                <h3>Report (Word)</h3>
+                <a asp-action="ReportWord">Load</a>
+            </th>
+        </tr>
+    </thead>
+</table>
+
+
+
 <table class="table">
     <thead>
         <tr>
@@ -41,6 +66,7 @@
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Subsidiaries</a> |
+                    <a asp-action="Export" asp-route-id="@item.Id">Export (Excel)</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>

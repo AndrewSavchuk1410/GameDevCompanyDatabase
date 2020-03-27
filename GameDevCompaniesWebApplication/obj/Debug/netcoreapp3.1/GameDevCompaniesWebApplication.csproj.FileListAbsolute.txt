@@ -156,7 +156,6 @@ C:\Users\andri\source\repos\GameDevCompaniesWebApplication\bin\Debug\netcoreapp3
 C:\Users\andri\source\repos\GameDevCompaniesWebApplication\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\andri\source\repos\GameDevCompaniesWebApplication\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\andri\source\repos\GameDevCompaniesWebApplication\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\andri\source\repos\GameDevCompaniesWebApplication\obj\Debug\netcoreapp3.1\GameDevCompaniesWebApplication.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\andri\source\repos\GameDevCompaniesWebApplication\obj\Debug\netcoreapp3.1\Razor\Views\GameDevCompanies\Create.cshtml.g.cs
 C:\Users\andri\source\repos\GameDevCompaniesWebApplication\obj\Debug\netcoreapp3.1\Razor\Views\GameDevCompanies\Delete.cshtml.g.cs
 C:\Users\andri\source\repos\GameDevCompaniesWebApplication\obj\Debug\netcoreapp3.1\Razor\Views\GameDevCompanies\Details.cshtml.g.cs
@@ -202,3 +201,16 @@ C:\Users\andri\source\repos\GameDevCompaniesWebApplication\obj\Debug\netcoreapp3
 C:\Users\andri\source\repos\GameDevCompaniesWebApplication\obj\Debug\netcoreapp3.1\Razor\Views\GamesPlatforms\Details.cshtml.g.cs
 C:\Users\andri\source\repos\GameDevCompaniesWebApplication\obj\Debug\netcoreapp3.1\Razor\Views\GamesPlatforms\Edit.cshtml.g.cs
 C:\Users\andri\source\repos\GameDevCompaniesWebApplication\obj\Debug\netcoreapp3.1\Razor\Views\GamesPlatforms\Index.cshtml.g.cs
+C:\Users\andri\source\repos\GameDevCompaniesWebApplication\bin\Debug\netcoreapp3.1\ClosedXML.dll
+C:\Users\andri\source\repos\GameDevCompaniesWebApplication\bin\Debug\netcoreapp3.1\DocumentFormat.OpenXml.dll
+C:\Users\andri\source\repos\GameDevCompaniesWebApplication\bin\Debug\netcoreapp3.1\ExcelNumberFormat.dll
+C:\Users\andri\source\repos\GameDevCompaniesWebApplication\bin\Debug\netcoreapp3.1\FastMember.dll
+C:\Users\andri\source\repos\GameDevCompaniesWebApplication\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\andri\source\repos\GameDevCompaniesWebApplication\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\andri\source\repos\GameDevCompaniesWebApplication\bin\Debug\netcoreapp3.1\System.IO.Packaging.dll
+C:\Users\andri\source\repos\GameDevCompaniesWebApplication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\andri\source\repos\GameDevCompaniesWebApplication\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netstandard1.3\System.Data.SqlClient.dll
+C:\Users\andri\source\repos\GameDevCompaniesWebApplication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard1.3\System.Data.SqlClient.dll
+C:\Users\andri\source\repos\GameDevCompaniesWebApplication\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Drawing.Common.dll
+C:\Users\andri\source\repos\GameDevCompaniesWebApplication\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Drawing.Common.dll
+C:\Users\andri\source\repos\GameDevCompaniesWebApplication\obj\Debug\netcoreapp3.1\GameDevCompaniesWebApplication.MvcApplicationPartsAssemblyInfo.cache

@@ -178,7 +178,7 @@ namespace GameDevCompaniesWebApplication.Controllers
             var subsidiaries = await _context.Subsidiaries.FindAsync(id);
             _context.Subsidiaries.Remove(subsidiaries);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "GameDevCompanies");
         }
 
         private bool SubsidiariesExists(int id)
